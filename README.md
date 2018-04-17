@@ -117,7 +117,7 @@ class MyButton extends Component {
   }
   
   render() {
-    return (<Button>Pay {this.state.amount} {this.state.currency}</Button>);
+    return (<Button onClick={this.onClick.bind(this)}>Pay {this.state.amount} {this.state.currency}</Button>);
   }
 }
 ```
