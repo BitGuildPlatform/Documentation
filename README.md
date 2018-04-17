@@ -18,7 +18,7 @@ For the details on how to accept tokens as payment methods, see the *approveAndC
 
 **Smart contract code example:**
 ```
-contract YourGameContract is Ownable {
+contract YourGameContract {
   BitGuildToken public tokenContract = 0x7E43581b19ab509BCF9397a2eFd1ab10233f27dE; // Predefined PLAT token address
 
   // Function to accept ethereum as a payment (not needed for integration, shown as an example)
@@ -80,22 +80,17 @@ Partners will need to change game UI to support rendering prices in PLAT. For th
         if (isOnPortal) {
           const bitGuildContract = window.web3.eth.contract(BitGuildTokenABI).at(BitGuildTokenAddr);
           bitGuildContract.approveAndCall(YourGameAddr, this.state.amount * 1e18, this.props.itemId, {
-            from: this.props.wallet,
-            gas: window.web3.toHex(15e4),
-            gasPrice: window.web3.toHex(1e10)
-          }, cb);
+            from: this.props.wallet
+          });
         } else {
           const yourContract = window.web3.eth.contract(YourGameABI).at(YourGameAddr);
           return yourContract.buyItem(this.props.itemId, {
             from: this.props.wallet,
-            value: this.state.amount * 1e18,
-            gas: window.web3.toHex(15e4),
-            gasPrice: window.web3.toHex(1e10)
-          }, cb);
+            value: this.state.amount * 1e18
+          });
         }
       });
   }
-}
 ```
 
 For the moment we will allow partners to use their own marketplace solutions; in the future (time TBD) BitGuild will include standardized marketplace logic in our SDK, and will likely require partners to implement it.
