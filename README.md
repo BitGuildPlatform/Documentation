@@ -16,87 +16,12 @@ For the details on how to accept tokens as payment methods, see the *approveAndC
 * approveAndCall on our token smart contract will call receiveApproval on your smart contract with this additional data so you can process the payment.
 * Also make sure to have a withdrawToken method on your smart contract so you have a way to retrieve those tokens. 
 
-See example integration here: https://github.com/BitGuildPlatform/SampleIntegration/blob/game/shared/contracts/TestGame.sol
+See example integration here: https://github.com/BitGuildPlatform/SampleIntegration
 
 
 #### Code example
 
-before
 ```
-pragma solidity ^0.4.2;
-
-contract Ownable {
-  address public owner;
-
-  function constructor() public {
-    owner = msg.sender;
-  }
-
-  modifier onlyOwner() {
-    require(msg.sender == owner);
-    _;
-  }
-
-  function transferOwnership(address newOwner) public onlyOwner {
-    if (newOwner != address(0)) {
-      owner = newOwner;
-    }
-  }
-}
-
-contract YourGameContract is Ownable {
-  function kill() public onlyOwner {
-    selfdestruct(msg.sender);
-  }
-  
-  function buyItem(bytes _id) public payable {
-    require(msg.value != 0);
-    require(_id.length != 0);
-     _buyItem(_id)
-  }
-  
-  function () external payable {
-    revert();
-  }
-}
-
-```
-
-after
-```
-pragma solidity ^0.4.2;
-
-contract BitGuildToken { // implements ERC20Interface
-    function totalSupply() public constant returns (uint);
-    function balanceOf(address tokenOwner) public constant returns (uint balance);
-    function allowance(address tokenOwner, address spender) public constant returns (uint remaining);
-    function transfer(address to, uint tokens) public returns (bool success);
-    function approve(address spender, uint tokens) public returns (bool success);
-    function transferFrom(address from, address to, uint tokens) public returns (bool success);
-
-    event Transfer(address indexed from, address indexed to, uint tokens);
-    event Approval(address indexed tokenOwner, address indexed spender, uint tokens);
-}
-
-contract Ownable {
-  address public owner;
-
-  function constructor() public {
-    owner = msg.sender;
-  }
-
-  modifier onlyOwner() {
-    require(msg.sender == owner);
-    _;
-  }
-
-  function transferOwnership(address newOwner) public onlyOwner {
-    if (newOwner != address(0)) {
-      owner = newOwner;
-    }
-  }
-}
-
 contract YourGameContract is Ownable {
     BitGuildToken public tokenContract;
 
@@ -143,35 +68,9 @@ Partners will need to change game UI to support rendering prices in PLAT. For th
 * If the game was launched from the portal use the previously mentioned oracle contract to determine the PLAT prices of items. 
 * Change item prices in game UI from “<XX> ETH” to “<XX * ratio> PLAT”
   
-See example integration here: https://github.com/BitGuildPlatform/SampleIntegration/blob/game/client/components/main/main.jsx
+See example integration here: https://github.com/BitGuildPlatform/SampleIntegration
 
 **TBD** Code example
-
-before
-```js
-class MyButton extends Component {
-  state = {
-    amount: this.props.amount,
-    currency: "ETH"
-  }
-  
-  onClick() {
-    const yourContract = window.web3.eth.contract(YourGameABI).at(YourGameAddr);
-    return yourContract.buyItem(this.props.itemId, {
-      from: this.props.wallet,
-      value: this.state.amount * 1e18,
-      gas: window.web3.toHex(15e4),
-      gasPrice: window.web3.toHex(1e10)
-    }, cb);
-  }
-  
-  render() {
-    return (<Button>Pay {this.state.amount} {this.state.currency}</Button>);
-  }
-}
-```
-
-after
 ```js
 class MyButton extends Component {
   state = {
