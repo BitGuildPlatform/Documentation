@@ -84,7 +84,7 @@ class MyButton extends Component {
         if (isOnPortal) {
           const oracleContract = window.web3.eth.contract(OracleABI).at(OracleAddr);
           oracleContract.PLATprice.call((err, PLATprice) => {
-            const ratio = 1 / PLATprice.toNumber() * 1e18; // 1 ETH = 50.000
+            const ratio = 1 / PLATprice.toNumber() * 1e18; // 1 ETH = 50.000 PLAT
             this.setState({
               amount: this.props.amount * ratio,
               name: "PLAT"
