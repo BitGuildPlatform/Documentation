@@ -9,7 +9,7 @@ We need developers to provide us the url of the game to be used from within BGP.
 
 ### 2. Required game smart contract changes
 
-Our sole requirement is that everywhere partners accept ETH for in-game sales, they must also accept PLAT (BitGuild token). To determine the current PLAT/ETH market exchange rate you can use our recommended (https://github.com/BitGuildPlatform/SampleIntegration/blob/master/contracts/PLATPriceOracle.sol) price oracle smart contract (so you can adjust your prices) or you can deploy your own version.
+Our sole requirement is that everywhere partners accept ETH for in-game sales, they must also accept PLAT (BitGuild token). To determine the current PLAT/ETH market exchange rate you can use our recommended (0x2339a01f8424d116ff7cf0869c9c37b769ed274f) price oracle smart contract (so you can adjust your prices) or you can deploy your own version.
 
 For the details on how to accept tokens as payment methods, see the *approveAndCall* method on BitGuild token. The idea is that
 * Instead of calling your smart contract directly, you call BitGuild’s token smart contract with approveAndCall, passing your smart contract address and additional call parameters (of your smart contract) to this method.
