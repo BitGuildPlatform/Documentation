@@ -7,6 +7,7 @@ I. [Portal integration](#i-portal-integration)
   1. [Placing your game on the portal](#1-placing-your-game-on-the-portal)
   2. [Required game smart contract changes](#2-required-game-smart-contract-changes)
   3. [Required game UI changes](#3-required-game-ui-changes)
+  
 II. [Required game smart contract changes](#ii-compliance-with-token-standards)
 
 ## I. Portal integration
