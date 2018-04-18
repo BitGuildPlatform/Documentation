@@ -1,11 +1,17 @@
-## Documentation
+# BitGuild Documentation
 BitGuild portal and platform docs
 
-## Portal integration
+<a name="portal"/>
+
+## I. Portal integration
+
+<a name="placingthegame"/>
 
 ### 1. Placing your game on our portal
 
 We need developers to provide us the url of the game to be used from within BGP. For this url we require developers to not reference any of their own login, signup, or landing pages. You can test it via the sandbox url: (**TBD**)
+
+<a name="smartcontractchanges"/>
 
 ### 2. Required game smart contract changes
 
