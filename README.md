@@ -6,7 +6,7 @@ I. [Portal integration](#i-portal-integration)
   2. [Required game smart contract changes](#2-required-game-smart-contract-changes)
   3. [Required game UI changes](#3-required-game-ui-changes)
   
-II. [Required game smart contract changes](#ii-compliance-with-token-standards)
+II. [Compliance with token standards](#ii-compliance-with-token-standards)
 
 ## I. Portal integration
 
