@@ -1,5 +1,4 @@
 # BitGuild Documentation
-BitGuild portal and platform docs
 
 I. [Portal integration](#i-portal-integration)
   1. [Placing your game on the portal](#1-placing-your-game-on-the-portal)
