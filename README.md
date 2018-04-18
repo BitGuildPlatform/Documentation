@@ -1,17 +1,19 @@
 # BitGuild Documentation
 BitGuild portal and platform docs
 
-<a name="portal"/>
+Contents:
+
+I. [Portal integration](#i-portal-integration)
+  1. [Placing your game on the portal](#1-placing-your-game-on-the-portal)
+  2. [Required game smart contract changes](#2-required-game-smart-contract-changes)
+  3. [Required game UI changes](#3-required-game-ui-changes)
+II. [Required game smart contract changes](#ii-compliance-with-token-standards)
 
 ## I. Portal integration
 
-<a name="placingthegame"/>
-
-### 1. Placing your game on our portal
+### 1. Placing your game on the portal
 
 We need developers to provide us the url of the game to be used from within BGP. For this url we require developers to not reference any of their own login, signup, or landing pages. You can test it via the sandbox url: (**TBD**)
-
-<a name="smartcontractchanges"/>
 
 ### 2. Required game smart contract changes
 
@@ -103,7 +105,7 @@ For the moment we will allow partners to use their own marketplace solutions; in
 
 See full integration example code here: https://github.com/BitGuildPlatform/SampleIntegration
   
-### 4. Compliance with wider token standards
+## II. Compliance with token standards
 
 We want to make sure all the game tokens are properly standardized and can be used from within our services. Make sure you use the latest version of the ERC721 standard and support:
 * tokenOfOwnerByIndex (see “Enumeration Extension” by the link above)
