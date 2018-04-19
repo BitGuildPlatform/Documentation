@@ -11,7 +11,7 @@ II. [Compliance with token standards](#ii-compliance-with-token-standards)
 
 ### 1. Placing your game on the portal
 
-We need developers to provide us the url of the game to be used from within BGP. For this url we require developers to not reference any of their own login, signup, or landing pages. You can test it via the sandbox url: https://bitguild.com/?sandbox_url=GAME_PAGE_URL
+We need developers to provide us the url of the game to be used from within BGP. For this url we require developers to not reference any of their own login, signup, or landing pages. You can test it via the sandbox url: https://bitguild.com/sandbox?url=GAME_PAGE_URL
 
 ### 2. Required game smart contract changes
 
