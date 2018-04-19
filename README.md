@@ -7,6 +7,8 @@ I. [Portal integration](#i-portal-integration)
   
 II. [Compliance with token standards](#ii-compliance-with-token-standards)
 
+If you have any questions after reading the docs, join our developer round table group: https://discord.gg/EJNgmD5
+
 ## I. Portal integration
 
 ### 1. Placing your game on the portal
