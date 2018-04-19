@@ -53,7 +53,8 @@ contract YourGameContract {
 ### 3. Required game UI changes
 
 Partners will need to change game UI to support rendering prices in PLAT. For that partners will need to: 
-* Detect if the game was launched from the BitGuild portal by checking it via the [Portal SDK](https://github.com/BitGuildPlatform/BitGuildPortalSDK/).
+* Use the last version of [BitGuild Portal SDK](https://github.com/BitGuildPlatform/BitGuildPortalSDK/): https://bitguild.com/sdk/BitGuildPlatformSDK_v0.1.js
+* Detect if the game was launched from the BitGuild portal by checking isOnPortal method.
 * If the game was launched from the portal, use the previously mentioned oracle contract to determine the PLAT prices of items. 
 * Change item prices in game UI from “<XX> ETH” to “<XX * ratio> PLAT”
 
