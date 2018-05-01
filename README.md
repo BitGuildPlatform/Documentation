@@ -4,6 +4,7 @@ I. [Portal integration](#i-portal-integration)
   1. [Placing your game on the portal](#1-placing-your-game-on-the-portal)
   2. [Required game smart contract changes](#2-required-game-smart-contract-changes)
   3. [Required game UI changes](#3-required-game-ui-changes)
+  4. [Testing](#4-testing)
   
 II. [Compliance with token standards](#ii-compliance-with-token-standards)
 
@@ -105,6 +106,12 @@ Partners will need to change game UI to support rendering prices in PLAT. For th
 For the moment we will allow partners to use their own marketplace solutions; in the future (timeline TBD) BitGuild will include standardized marketplace logic in our SDK, and will likely require partners to implement it.
 
 See full integration example here: https://github.com/BitGuildPlatform/SampleIntegration
+
+### 4. Testing
+
+We deployed PLAT and price oracle contracts to Rinkeby, here're the addresses:
+* PLAT: 0x0f2698b7605fe937933538387b3d6fec9211477d
+* Price Oracle: 0xf6ccc29b8419e6144e158d122eaf05a5daf0ffab
   
 ## II. Compliance with token standards
 
