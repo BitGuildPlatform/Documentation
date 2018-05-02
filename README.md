@@ -116,8 +116,8 @@ We deployed PLAT and price oracle contracts to Rinkeby, here're the addresses:
 ## II. Compliance with token standards
 
 We want to make sure all the game tokens are properly standardized and can be used from within our services. Make sure you use the latest version of the ERC721 standard and support:
-* tokenOfOwnerByIndex (see “Enumeration Extension” by the link above)
+* tokenOfOwnerByIndex (see “Enumeration Extension” [here](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-721.md))
 * safeTransferFrom, that also triggers the receiver protocol (ERC721TokenReceiver)
-* ERC721MetaData with name and a tokenUri for json that has image url in it
+* ERC721MetaData with name and a tokenUri for json that has image url in it (also [here](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-721.md))
 
 For all the ERC20 tokens you use in your game (for resources and fungible items) make sure you support the transferAndCall function from the [extended ERC20 standard](https://github.com/ethereum/EIPs/issues/677), so tokens can be transferred to a smart contract in 1 transaction, not 2. We generally recommend using ERC20+ERC677 instead of ERC223.
