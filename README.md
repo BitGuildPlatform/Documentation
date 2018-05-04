@@ -7,7 +7,7 @@ I. [Portal integration](#i-portal-integration)
   4. [Testing](#4-testing)
   
 II. [Compliance with token standards](#ii-compliance-with-token-standards)
-  1. [Standards](#1-standards)
+  1. [Standards](#1-requirements)
   2. [Fallbacks](#2-fallbacks)
 
 If you have any questions after reading the docs, join our developer round table group: https://discord.gg/EJNgmD5
@@ -117,7 +117,7 @@ We deployed PLAT and price oracle contracts to Rinkeby, here're the addresses:
   
 ## II. Compliance with token standards
 
-### 1. Standards
+### 1. Requirements
 
 We want to make sure all the game tokens are properly standardized and can be used from within our services. Make sure you use the latest version of the ERC721 standard and support:
 * tokenOfOwnerByIndex (see “Enumeration Extension” [here](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-721.md))
