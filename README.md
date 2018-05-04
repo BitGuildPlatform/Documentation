@@ -7,7 +7,8 @@ I. [Portal integration](#i-portal-integration)
   4. [Testing](#4-testing)
   
 II. [Compliance with token standards](#ii-compliance-with-token-standards)
-  1. [Standards]()
+  1. [Standards](#1-standards)
+  2. [Fallbacks](#2-fallbacks)
 
 If you have any questions after reading the docs, join our developer round table group: https://discord.gg/EJNgmD5
 
