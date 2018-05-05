@@ -140,10 +140,9 @@ In the case you didn't implement enumeration or metadata extensions to ERC721 in
 
 SDK methods:
 
-
-**init(): Promise<void>** initializes SDK
-**isOnPortal(): Promise<boolean>** determinates whether SDK was properly initialized by portal
-**getUser(): Promise<object>** returns current portal user `{language, wallet, nickName}`
+- **init(): Promise<void>** initializes SDK
+- **isOnPortal(): Promise<boolean>** determinates whether SDK was properly initialized by portal
+- **getUser(): Promise<object>** returns current portal user `{language, wallet, nickName}`
  * language: String 2-char language code, available languages are `en`, `zh`
  * wallet: ERC20 compatible wallet address 0x87efa7f59bAA8e475F181B36f77A3028494a2cf6
  * nickName: user defined string that matches /^[ a-z0-9_-]+$/i
