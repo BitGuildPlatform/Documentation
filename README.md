@@ -140,6 +140,6 @@ In the case you didn't implement enumeration or metadata extensions to ERC721 in
 
 SDK methods:
 
-* **init(): Promise** initializes SDK
-* **isOnPortal(): Promise** determinates whether SDK was properly initialized by portal
+* **init(): Promise** initializes SDK. Make sure to wait for that to finish before calling all the other methods.
+* **isOnPortal(): Promise** tells if the page is launched from within the portal
 * **getUser(): Promise** returns current portal user `{language, wallet, nickName}`
