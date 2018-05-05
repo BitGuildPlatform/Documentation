@@ -9,8 +9,10 @@ I. [Portal integration](#i-portal-integration)
 II. [Compliance with token standards](#ii-compliance-with-token-standards)
   1. [Standards](#1-requirements)
   2. [Fallbacks](#2-fallbacks)
+  
+III. [BitGuild Portal SDK](#iii-bitguild-portal-sdk)
 
-If you have any questions after reading the docs, join our developer round table group: https://discord.gg/EJNgmD5
+If you still have any questions after reading this doc, join our developer round table group: https://discord.gg/EJNgmD5
 
 ## I. Portal integration
 
@@ -133,3 +135,10 @@ In the case you didn't implement enumeration or metadata extensions to ERC721 in
 
 * `https://[YOURDOMAIN/PATH]/itemList/[address]` where addess is an Ethereum public address for a particular user. This should return an json with an array of token indices that belong to this user. Example: `{itemList: [142, 31, 3181]}`.
 * `https://[YOURDOMAIN/PATH]/itemInfo/[index]` where index is the token index. This endpoint should return json data in the same format as ERC721MetaData described above would. 
+
+## III. BitGuild Portal SDK
+
+SDK methods:
+* TBD 
+* TBD
+* TBD
