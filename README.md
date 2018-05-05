@@ -139,6 +139,7 @@ In the case you didn't implement enumeration or metadata extensions to ERC721 in
 ## III. BitGuild Portal SDK
 
 SDK methods:
-* TBD 
-* TBD
-* TBD
+
+**init(): Promise** initializes SDK
+**isOnPortal(): Promise** determinates whether SDK was properly initialized by portal
+**getUser(): Promise** returns current portal user `{language, wallet, nickName}`
