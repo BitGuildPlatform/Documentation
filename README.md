@@ -147,7 +147,6 @@ SDK methods:
   * wallet: ERC20 compatible wallet address 0x87efa7f59bAA8e475F181B36f77A3028494a2cf6
   * nickName: user defined string that matches /^[ a-z0-9_-]+$/i
 
----
 Example:
 
 ```js
