@@ -18,7 +18,7 @@ If you still have any questions after reading this doc, join our developer round
 
 ### 1. Placing your game on the portal
 
-We need developers to provide us the url of the game to be used from within the BitGuild Portal (BGP). On the page at this url we require developers to not include any of their own login, signup, or landing pages - assume the user is already connected via web3 bridge like MetaMask. You can test the placement via the sandbox url: https://bitguild.com/sandbox?url=GAME_PAGE_URL
+We need developers to provide us the url of the game to be used from within the BitGuild Portal (BGP). On the page at this url we require developers to not include any of their own login, signup, or landing pages - assume the user is already connected via web3 bridge like MetaMask. Ideally this is not your default game page but rather portal-specific - since SDK load adds latency on page refresh and you probably don't want that when you're not running on the portal. You can test the placement via the sandbox url: https://bitguild.com/sandbox?url=GAME_PAGE_URL
 
 ### 2. Required game smart contract changes
 
