@@ -113,13 +113,13 @@ See full integration example here: https://github.com/BitGuildPlatform/SampleInt
 
 ### 4. Testing
 
-We deployed PLAT and price oracle contracts to both Mainnet and Rinkeby, here're the addresses:
+We have PLAT and price oracle contracts on both Mainnet and Rinkeby, here're the addresses:
 * Mainnet
-  * PLAT: 0x7E43581b19ab509BCF9397a2eFd1ab10233f27dE
-  * Price Oracle: 0x3127be52acba38beab6b4b3a406dc04e557c037c
+  * PLAT: [0x7E43581b19ab509BCF9397a2eFd1ab10233f27dE](https://etherscan.io/address/0x7E43581b19ab509BCF9397a2eFd1ab10233f27dE)
+  * Price Oracle: [0x3127be52acba38beab6b4b3a406dc04e557c037c](https://etherscan.io/address/0x3127be52acba38beab6b4b3a406dc04e557c037c)
 * Rinkeby
-  * PLAT: 0x0f2698b7605fe937933538387b3d6fec9211477d
-  * Price Oracle: 0x20159d575724b68d8a1a80e16fcb874883329114
+  * PLAT: [0x0f2698b7605fe937933538387b3d6fec9211477d](https://rinkeby.etherscan.io/address/0x0f2698b7605fe937933538387b3d6fec9211477d)
+  * Price Oracle: [0x20159d575724b68d8a1a80e16fcb874883329114](https://rinkeby.etherscan.io/address/0x20159d575724b68d8a1a80e16fcb874883329114)
   
 ## II. Compliance with token standards
 
