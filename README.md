@@ -22,7 +22,7 @@ We need developers to provide us the url of the game to be used from within the 
 
 ### 2. Required game smart contract changes
 
-Our key requirement is that wherever partners accept ETH for in-game purchases, they must also accept PLAT (BitGuild token). To determine the current PLAT/ETH market exchange rate (so you can convert your ETH prices to PLAT) you can use our [recommended price oracle smart contract](https://etherscan.io/address/0x2339a01f8424d116ff7cf0869c9c37b769ed274f) or you can [deploy your own version](https://github.com/BitGuildPlatform/Contracts/blob/master/contracts/PLATPriceOracle.sol).
+Our key requirement is that wherever partners accept ETH for in-game purchases, they must also accept PLAT (BitGuild token). To determine the current PLAT/ETH market exchange rate (so you can convert your ETH prices to PLAT) you can use our [recommended price oracle smart contract](https://etherscan.io/address/0x3127be52acba38beab6b4b3a406dc04e557c037c) or you can [deploy your own version](https://github.com/BitGuildPlatform/Contracts/blob/master/contracts/PLATPriceOracle.sol).
 
 For the details on how to accept tokens as payment methods, see *approveAndCall* method on BitGuild token. The idea is that:
 * Instead of calling your smart contract directly with eth as a payment, you call BitGuild’s token smart contract with approveAndCall, passing your smart contract address, price and additional data parameter (to be passed to your smart contract) to this method.
@@ -113,9 +113,13 @@ See full integration example here: https://github.com/BitGuildPlatform/SampleInt
 
 ### 4. Testing
 
-We deployed PLAT and price oracle contracts to Rinkeby, here're the addresses:
-* PLAT: 0x0f2698b7605fe937933538387b3d6fec9211477d
-* Price Oracle: 0xf6ccc29b8419e6144e158d122eaf05a5daf0ffab
+We deployed PLAT and price oracle contracts to both Mainnet and Rinkeby, here're the addresses:
+* Mainnet
+  * PLAT: 0x7E43581b19ab509BCF9397a2eFd1ab10233f27dE
+  * Price Oracle: 0x3127be52acba38beab6b4b3a406dc04e557c037c
+* Rinkeby
+  * PLAT: 0x0f2698b7605fe937933538387b3d6fec9211477d
+  * Price Oracle: 0x20159d575724b68d8a1a80e16fcb874883329114
   
 ## II. Compliance with token standards
 
