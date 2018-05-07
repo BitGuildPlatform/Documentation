@@ -142,12 +142,12 @@ For localized names and descriptions add `translations` blob in the json, that w
   name: "XXXX",
   description: "XXXX",
   image:"https://gameurl/XXXX.png"
-  translations: [
+  translations: {
     “fr”: {
       “name”:”xxx”,   
       “description”:”xxx”
     }
-  ]
+  }
 ```
 Where the values from translations blob will be taken for specified languages and default for all the others.
 
