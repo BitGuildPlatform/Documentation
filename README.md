@@ -134,7 +134,22 @@ For all the ERC20 tokens you use in your game (for resources and fungible items)
 In the case you didn't implement enumeration or metadata extensions to ERC721 in your smart contract, there's still a way to provide our wallets necessary data - in a traditional centralized fashion. For that we need two APIs with the following schemas:
 
 * `https://[YOURDOMAIN/PATH]/itemList/[address]` where addess is an Ethereum public address for a particular user. This should return an json with an array of token indices that belong to this user. Example: `{itemList: [142, 31, 3181]}`.
-* `https://[YOURDOMAIN/PATH]/itemInfo/[index]` where index is the token index. This endpoint should return json data in the same format as ERC721MetaData described above would. 
+* `https://[YOURDOMAIN/PATH]/itemInfo/[index]` where index is the token index. This endpoint should return json data in the same format as ERC721MetaData described above would.
+
+For localized names and descriptions add `translations` blob in the json, that would look the following way:
+
+```
+  name: "XXXX",
+  description: "XXXX",
+  image:"https://gameurl/XXXX.png"
+  translations: [
+    “fr”: {
+      “name”:”xxx”,   
+      “description”:”xxx”
+    }
+  ]
+```
+Where the values from translations blob will be taken for specified languages and default for all the others.
 
 ## III. BitGuild Portal SDK
 
@@ -150,15 +165,15 @@ SDK methods:
 Example:
 
 ```js
-const sdk = require("BitGuildPortalSDK_v0.1.js");
-sdk.init();
-// ...
-sdk.isOnPortal(isOnPortal => {
-  if (isOnPortal) {
-    return sdk.getUser()
-      .then(user => {
-        // do something with user
-      })
-  }
-})
+  const sdk = require("BitGuildPortalSDK_v0.1.js");
+  sdk.init();
+  ...
+  sdk.isOnPortal(isOnPortal => {
+    if (isOnPortal) {
+      return sdk.getUser()
+        .then(user => {
+          // do something with user
+        })
+    }
+  })
 ```
