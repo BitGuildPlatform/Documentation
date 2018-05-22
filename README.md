@@ -163,7 +163,7 @@ SDK methods:
 * **isOnPortal(): Promise\<Boolean>**, determinates whether SDK was properly initialized by portal
 * **getUser(): Promise\<User>**, returns portal user info if ran from the portal
 * **getUsersByAddress(addresses: string[]): Promise\<Array\<User>>**, resolves addresses to portal users,
-it is possible not all addresses are resolved, so you have to manually match input array to results
+it is possible not all addresses could be resolved, so you have to manually match input array to results.
 
 ```typescript
 interface User {
