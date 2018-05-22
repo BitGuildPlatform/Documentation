@@ -162,6 +162,8 @@ SDK methods:
 * **init(): Promise\<Void>**, initializes SDK
 * **isOnPortal(): Promise\<Boolean>**, determinates whether SDK was properly initialized by portal
 * **getUser(): Promise\<User>**, returns portal user info if ran from the portal
+* **getUsersByAddress(addresses: string[]): Promise\<Array\<User>>**, resolves addresses to portal users,
+it is possible not all addresses are resolved, so you have to manually match input array to results
 
 ```typescript
 interface User {
@@ -171,13 +173,16 @@ interface User {
 }
 ```
 
-Example:
-
+Initialization:
 ```js
-  const sdk = require("BitGuildPortalSDK_v0.1.js");
-  sdk.init();
-  ...
-  sdk.isOnPortal(isOnPortal => {
+const sdk = require("BitGuildPortalSDK_v0.1.js");
+sdk.init();
+```
+
+Getting current user
+```js
+sdk.isOnPortal()
+  .then(isOnPortal => {
     if (isOnPortal) {
       return sdk.getUser()
         .then(user => {
@@ -187,5 +192,10 @@ Example:
   })
 ```
 
-* **getUsersByAddress(addresses: string[]): Promise\<Array\<User>>**, resolves addresses to portal users,
-it is possible not all addresses are resolved, so you have to manually match input array to results
+Resolving Addresses
+```js
+sdk.getUsersByAddress(["0x87efa7f59bAA8e475F181B36f77A3028494a2cf6"])
+  .then(users => {
+    // do something with users
+  })
+```
