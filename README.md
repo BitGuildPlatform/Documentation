@@ -165,6 +165,7 @@ SDK methods:
 * **getUsersByAddress(addresses: string[]): Promise\<Map\<string, User>>**, resolves addresses to portal users,
 it is possible not all addresses are resolved, so you have to manually check for undefined
 
+
 ```typescript
 interface User {
   language: string; // String 2-char language code, available languages are en|zh|pt|ja|fr|es|ru
