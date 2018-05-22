@@ -159,12 +159,17 @@ Where the values from translations blob will be taken for specified languages an
 
 SDK methods:
 
-* **init()**: Promise<void>, initializes SDK
-* **isOnPortal()**: Promise<boolean>, determinates whether SDK was properly initialized by portal
-* **getUser()**: Promise<object>, returns portal user info if ran from the portal: `{language, wallet, nickName}`
-  * language: String 2-char language code, available languages are `en`, `zh`
-  * wallet: ERC20 compatible wallet address 0x87efa7f59bAA8e475F181B36f77A3028494a2cf6
-  * nickName: user defined string that matches /^[ a-z0-9_-]+$/i
+* **init(): Promise\<Void>**, initializes SDK
+* **isOnPortal(): Promise\<Boolean>**, determinates whether SDK was properly initialized by portal
+* **getUser(): Promise\<User>**, returns portal user info if ran from the portal
+
+```typescript
+interface User {
+  language: string; // String 2-char language code, available languages are en|zh|pt|ja|fr|es|ru
+  wallet: string; // ERC20 compatible wallet address 0x87efa7f59bAA8e475F181B36f77A3028494a2cf6
+  nickName: string; // user defined string that matches /^[ a-z0-9_-]+$/i
+}
+```
 
 Example:
 
@@ -181,3 +186,6 @@ Example:
     }
   })
 ```
+
+* **getUsersByAddress(addresses: string[]): Promise\<Array\<User>>**, resolves addresses to portal users,
+it is possible not all addresses are resolved, so you have to manually match input array to results
