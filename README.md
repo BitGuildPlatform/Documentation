@@ -176,7 +176,7 @@ interface User {
 
 Initialization:
 ```js
-const sdk = require("BitGuildPortalSDK_v0.1.js");
+const sdk = require("https://www.bitguild.com/sdk/BitGuildPortalSDK_v0.1.js");
 sdk.init();
 ```
 
