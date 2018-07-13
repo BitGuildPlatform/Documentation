@@ -8,7 +8,8 @@ I. [Portal integration](#i-portal-integration)
   
 II. [Compliance with token standards](#ii-compliance-with-token-standards)
   1. [Standards](#1-requirements)
-  2. [Fallbacks](#2-fallbacks)
+  2. [JSON Format](#2-json-format)
+  3. [Fallbacks](#3-fallbacks)
   
 III. [BitGuild Portal SDK](#iii-bitguild-portal-sdk)
 
@@ -128,32 +129,47 @@ We have PLAT and price oracle contracts on both Mainnet and Rinkeby, here're the
 We want to make sure all the game tokens are properly standardized and can be used from within our services. Make sure you use the latest version of the ERC721 standard and support:
 * tokenOfOwnerByIndex (see “Enumeration Extension” [here](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-721.md))
 * safeTransferFrom, that also triggers the receiver protocol (ERC721TokenReceiver)
-* ERC721MetaData with name and a tokenUri for json that has image url in it (also [here](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-721.md))
-* You also may want to support [attributes](https://medium.com/blockchain-manchester/evolving-erc-721-metadata-standards-44646c2eb332) in your metadata, to be used as categories for items on the portal.
+* ERC721MetaData with name and a tokenUri for json that has image url in it (also [here](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-721.md)) (see example below)
+* You also may want to support [attributes](https://medium.com/blockchain-manchester/evolving-erc-721-metadata-standards-44646c2eb332) in your metadata, to be used as categories for items on the portal (see example below).
 
 For all the ERC20 tokens you use in your game (for resources and fungible items) make sure you support the transferAndCall function from the [extended ERC20 standard](https://github.com/ethereum/EIPs/issues/677), so tokens can be transferred to a smart contract in 1 transaction, not 2. We generally recommend using ERC20+ERC677 instead of ERC223.
 
-### 2. Fallbacks
+### 2. JSON Format
+
+For the JSON file you return via metadata extension, here's the supported structure:
+
+```
+  name: "XXXX",
+  description: "XXXX",
+  image: "https://gameurl/XXXX.png",
+  attributes: {
+    "ATTRIBUTE_1":{keyLan: "ATTRIBUTE_1_STRING", value: "VALUE_1_STRING"},
+    "ATTRIBUTE_2":{keyLan: "ATTRIBUTE_1_STRING", value: "VALUE_2_STRING"},
+  }
+```
+
+Example: 
+
+```
+  "name": "Fortune Fox",
+  "description": "A small and cute fortune fox that gives you nice attack boost",
+  "image": "https://ether.online/v1/pet4.png",
+  "attributes": {
+    "set": {"keyLan": "Sets"},
+    "rarity": {"keyLan":"Rarity", "value":"Legendary"},
+    "type": {"keyLan":"Type", "value":"Pets"},
+    "attack": {"keyLan":"Attack", "value":"+30%"}
+  }
+```
+
+For localized version of the texts make sure to support /language in the url, such as https://ether.online/api/v1/item/itemInfo/1/ru
+
+### 3. Fallbacks
 
 In the case you didn't implement enumeration or metadata extensions to ERC721 in your smart contract, there's still a way to provide our wallets necessary data - in a traditional centralized fashion. For that we need two APIs with the following schemas:
 
 * `https://[YOURDOMAIN/PATH]/itemList/[address]` where addess is an Ethereum public address for a particular user. This should return an json with an array of token indices that belong to this user. Example: `{itemList: [142, 31, 3181]}`.
 * `https://[YOURDOMAIN/PATH]/itemInfo/[index]` where index is the token index. This endpoint should return json data in the same format as ERC721MetaData described above would.
-
-For localized names and descriptions add `translations` blob in the json, that would look the following way:
-
-```
-  name: "XXXX",
-  description: "XXXX",
-  image:"https://gameurl/XXXX.png"
-  translations: {
-    “fr”: {
-      “name”:”xxx”,   
-      “description”:”xxx”
-    }
-  }
-```
-Where the values from translations blob will be taken for specified languages and default for all the others.
 
 ## III. BitGuild Portal SDK
 
