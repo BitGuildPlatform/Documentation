@@ -143,8 +143,8 @@ For the JSON file you return via metadata extension, here's the supported struct
   description: "XXXX",
   image: "https://gameurl/XXXX.png",
   attributes: {
-    "ATTRIBUTE_1":{keyLan: "ATTRIBUTE_1_STRING", value: "VALUE_1_STRING"},
-    "ATTRIBUTE_2":{keyLan: "ATTRIBUTE_1_STRING", value: "VALUE_2_STRING"},
+    "ATTRIBUTE_1": {keyLan: "ATTRIBUTE_1_STRING", value: "VALUE_1_STRING"},
+    "ATTRIBUTE_2": {keyLan: "ATTRIBUTE_1_STRING", value: "VALUE_2_STRING"},
   }
 ```
 
@@ -162,7 +162,7 @@ Example:
   }
 ```
 
-For localized version of the texts make sure to support /language in the url, such as https://ether.online/api/v1/item/itemInfo/1/ru
+For localized version of the texts make sure to support /language at the end of the url, such as https://ether.online/api/v1/item/itemInfo/1/ru instead of https://ether.online/api/v1/item/itemInfo/1
 
 ### 3. Fallbacks
 
